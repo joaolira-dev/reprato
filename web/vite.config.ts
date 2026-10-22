@@ -1,8 +1,13 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server: { proxy: { '/api': 'http://localhost:18080' } },
+  server: {
+    proxy: {
+      '/api/offers': 'http://localhost:18081',
+      '/api/stock': 'http://localhost:18082',
+      '/api/orders': 'http://localhost:18083',
+    },
+  },
 })
