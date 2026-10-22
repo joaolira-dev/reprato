@@ -184,7 +184,7 @@ function App() {
         </nav>
         <div className="nav-actions">
           <span className="location"><MapPin size={15} /> João Pessoa, PB</span>
-          {savedOrderId && online && <button className="my-order-button" type="button" onClick={openSavedOrder}><ShoppingBag size={16} /><span>Minha reserva</span></button>}
+          {savedOrderId && online && <button className="my-order-button" type="button" aria-label="Abrir minha reserva" onClick={openSavedOrder}><ShoppingBag size={16} /><span>Minha reserva</span></button>}
           <button className="bag-button" type="button" onClick={() => { setShowFavorites((value) => !value); document.getElementById('ofertas')?.scrollIntoView({ behavior: 'smooth' }) }} aria-label={showFavorites ? 'Mostrar todas as ofertas' : 'Mostrar favoritos'} title="Favoritos"><Heart size={19} fill={showFavorites ? 'currentColor' : 'none'} /><span>{favorites.length}</span></button>
           <button className="mobile-menu" type="button" aria-label="Abrir menu" aria-expanded={menuOpen} onClick={() => setMenuOpen((value) => !value)}>{menuOpen ? <X size={22} /> : <Menu size={22} />}</button>
         </div>
