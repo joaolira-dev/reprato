@@ -1,0 +1,12 @@
+CREATE TABLE purchase_orders (
+  id UUID PRIMARY KEY,
+  offer_id BIGINT NOT NULL,
+  title VARCHAR(120) NOT NULL,
+  merchant VARCHAR(120) NOT NULL,
+  guest_name VARCHAR(100) NOT NULL,
+  quantity INTEGER NOT NULL CHECK (quantity > 0),
+  unit_price NUMERIC(10,2) NOT NULL,
+  total NUMERIC(10,2) NOT NULL,
+  status VARCHAR(24) NOT NULL CHECK (status IN ('PENDING_STOCK','RESERVED','REJECTED','CANCELED')),
+  created_at TIMESTAMPTZ NOT NULL
+);
